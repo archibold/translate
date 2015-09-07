@@ -1,0 +1,35 @@
+<ion-view>
+	<ion-header-bar class="borderless" ng-class="level == 0? 'bar-positive': level ==1? 'bar-calm': level ==2? 'bar-balanced': level == 3? 'bar-energized': 'bar-assertive'">
+		<a class="button icon ion-navicon borderless" ng-click="menu = !menu"></a>
+		<div class="button-bar">
+			
+			<a class="button button-positive borderless" ng-click="changeLevel(0)"></a>
+			<a class="button button-calm borderless" ng-click="changeLevel(1)"></a>
+			<a class="button button-balanced borderless" ng-click="changeLevel(2)"></a>
+			<a class="button button-energized borderless" ng-click="changeLevel(3)"></a>
+			<a class="button button-assertive borderless" ng-click="changeLevel(4)"></a>
+		</div>
+	</ion-header-bar>
+	<ion-content class="has-header has-footer" ng-click="translateWord()" ng-class="level == 0? 'positive-bg': level ==1? 'calm-bg': level ==2? 'balanced-bg': level == 3? 'energized-bg': 'assertive-bg'">
+		<div ng-show="!translate && !menu" class="centered">
+			<h1>{{data.word}}</h1>
+		</div>
+		<div ng-show="translate && !menu" class="centered">
+			<h1>{{data.translate}}</h1>
+		</div>
+		<div ng-show="menu">
+			<a class="button button-block button-royal borderless button-menu" ng-click="changeToEnglish()">English</a>
+			<a class="button button-block button-dark borderless button-menu" ng-click="changeToSpanish()">Spanish</a>
+			<a class="button button-block button-stable borderless button-menu" ng-click="reset()">Reset</a>
+		</div>
+	</ion-content>
+	<div class="bar bar-subfooter borderless" ng-show="!menu" ng-class="level == 0? 'bar-positive': level ==1? 'bar-calm': level ==2? 'bar-balanced': level == 3? 'bar-energized': 'bar-assertive'">
+	  	<h2 class="title">{{data.wordsLeft}}</h2>
+	</div>
+	<ion-footer-bar class="borderless" ng-class="level == 0? 'bar-positive': level ==1? 'bar-calm': level ==2? 'bar-balanced': level == 3? 'bar-energized': 'bar-assertive'" ng-click="translateWord()">
+		<div class="button-bar" ng-show="translate">
+			<button class="button button-icon icon ion-ios-checkmark-empty" ng-click="levelUp(data.id)"></button>
+			<button class="button button-icon icon ion-ios-loop" ng-click="getNext()"></button>
+		</div>
+	</ion-footer-bar>
+</ion-view>

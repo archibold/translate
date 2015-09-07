@@ -1,0 +1,38 @@
+/* Empty. Add your own CSS if you like */
+/*.centered {
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: calc(50% - 50px);
+}*/
+
+.borderless{
+	border: none;
+	background-position: top;
+	background-image: none !important;
+}
+
+.scroll-content {
+  display: table !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.scroll {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.button-menu{
+	height: 100px;
+	line-height: 100px;
+    font-size: 50px;
+}
+
+/*.bar-footer{
+	height: 100px;
+}
+
+.bar-subfooter{
+	bottom: 144px;
+}*/
